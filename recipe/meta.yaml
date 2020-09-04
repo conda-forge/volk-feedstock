@@ -35,10 +35,7 @@ requirements:
 test:
   commands:
     # verify CLI tools
-    {% set volk_cmds = [
-        "volk-config-info",
-        "volk_profile",
-    ] %}
+    {% set volk_cmds = ["volk-config-info", "volk_profile"] %}
     {% set volk_python_cmds = ["volk_modtool"] %}  # [unix]
     {% set volk_python_cmds = ["volk_modtool.py"] %}  # [win]
     {% for each_cmd in volk_cmds + volk_python_cmds %}
