@@ -20,6 +20,9 @@ jobs:
       osx_64_boost_cpp1.72.0python3.8.____cpython:
         CONFIG: osx_64_boost_cpp1.72.0python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
+      osx_64_boost_cpp1.72.0python3.9.____cpython:
+        CONFIG: osx_64_boost_cpp1.72.0python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
       osx_64_boost_cpp1.74.0python3.6.____73_pypy:
         CONFIG: osx_64_boost_cpp1.74.0python3.6.____73_pypy
         UPLOAD_PACKAGES: 'True'
@@ -31,6 +34,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       osx_64_boost_cpp1.74.0python3.8.____cpython:
         CONFIG: osx_64_boost_cpp1.74.0python3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_boost_cpp1.74.0python3.9.____cpython:
+        CONFIG: osx_64_boost_cpp1.74.0python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
     maxParallel: 8
   timeoutInMinutes: 360
