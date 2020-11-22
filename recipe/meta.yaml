@@ -1,5 +1,6 @@
+{% set volk_lib = "volk" %}
 {% set name = "volk" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name }}
@@ -7,13 +8,13 @@ package:
 
 source:
   url: https://github.com/gnuradio/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 236e63ced36c0e29cf2988bca21d4d7bf27ccf20f30b5fa4b489781eeff85dde
+  sha256: e63e7bd017b41ca548606eaf223a3e9c7b7b8fcad4ca97f099d7ddbab8019c15
 
 build:
-  number: 3
+  number: 0
   run_exports:
     - {{ pin_subpackage('volk', max_pin='x.x') }}
-  skip: True  # [py2k]
+  skip: true  # [py2k]
 
 requirements:
   build:
@@ -60,7 +61,7 @@ about:
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: COPYING
-  summary: 'The Vector Optimized Library of Kernels'
+  summary: The Vector Optimized Library of Kernels
   description: |
     VOLK is the Vector-Optimized Library of Kernels. It is a free library,
     currently offered under the GPLv3, that contains kernels of hand-written
