@@ -6,7 +6,6 @@ cd build
 
 :: configure
 cmake -G "NMake Makefiles JOM" ^
-      -DBoost_NO_BOOST_CMAKE=ON ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
       -DPYTHON_EXECUTABLE:PATH="%PYTHON%" ^
@@ -19,7 +18,7 @@ cmake -G "NMake Makefiles JOM" ^
 if errorlevel 1 exit 1
 
 :: build
-cmake --build . -- -j%CPU_COUNT%
+cmake --build . --config Release -- -j%CPU_COUNT%
 if errorlevel 1 exit 1
 
 :: test
@@ -27,5 +26,5 @@ ctest --output-on-failure
 ::if errorlevel 1 exit 1
 
 :: install
-cmake --build . --target install
+cmake --build . --config Release --target install
 if errorlevel 1 exit 1

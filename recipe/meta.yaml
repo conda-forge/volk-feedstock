@@ -25,12 +25,12 @@ requirements:
     - pkg-config  # [not win]
 
   host:
-    - boost-cpp  # [not linux]
+    - boost-cpp  # [osx]
     - mako >=0.4.2
     - python
 
   run:
-    - boost-cpp  # [not linux]
+    - boost-cpp  # [osx]
     - python
 
 test:
