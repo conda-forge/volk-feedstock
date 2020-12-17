@@ -2,14 +2,16 @@
 
 mkdir build
 cd build
-cmake \
-    -DCMAKE_PREFIX_PATH=$PREFIX \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
-    -DPYTHON_EXECUTABLE=$PYTHON \
-    -DLIB_SUFFIX="" \
-    -DENABLE_PROFILING=OFF \
-    -DENABLE_TESTING=ON \
-    ..
-cmake --build . -- -j${CPU_COUNT}
+
+cmake_config_args=(
+    -DCMAKE_BUILD_TYPE=Release
+    -DCMAKE_INSTALL_LIBDIR=lib
+    -DCMAKE_INSTALL_PREFIX=$PREFIX
+    -DCMAKE_PREFIX_PATH=$PREFIX
+    -DENABLE_PROFILING=OFF
+    -DENABLE_TESTING=ON
+)
+cmake .. "${cmake_config_args[@]}"
+cmake --build . --config Release -- -j${CPU_COUNT}
 ctest --output-on-failure || true
-cmake --build . --target install
+cmake --build . --config Release --target install
