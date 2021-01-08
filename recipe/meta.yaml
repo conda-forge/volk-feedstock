@@ -11,7 +11,7 @@ source:
   sha256: 61d681f90e0f30894f806ab050e9ba28260799c01f1ed0f58623942d8c7f4d48
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('volk', max_pin='x.x') }}
   skip: true  # [py2k]
