@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake >=3.8
-    - jom  # [win]
+    - ninja
     - pkg-config  # [not win]
 
   host:

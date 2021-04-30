@@ -5,7 +5,7 @@ mkdir build
 cd build
 
 :: configure
-cmake -G "NMake Makefiles JOM" ^
+cmake -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
       -DPYTHON_EXECUTABLE:PATH="%PYTHON%" ^

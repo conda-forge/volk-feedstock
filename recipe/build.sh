@@ -11,7 +11,7 @@ cmake_config_args=(
     -DENABLE_PROFILING=OFF
     -DENABLE_TESTING=ON
 )
-cmake .. "${cmake_config_args[@]}"
+cmake -G "Ninja" .. "${cmake_config_args[@]}"
 cmake --build . --config Release -- -j${CPU_COUNT}
 ctest --output-on-failure || true
 cmake --build . --config Release --target install
