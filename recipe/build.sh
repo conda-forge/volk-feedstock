@@ -15,7 +15,6 @@ cmake_config_args=(
     -DENABLE_TESTING=ON
 )
 cmake -G "Ninja" .. "${cmake_config_args[@]}"
-# single-threaded build to avoid https://foss.heptapod.net/pypy/pypy/-/issues/3299
-cmake --build . --config Release -- -j1
+cmake --build . --config Release -- -j${CPU_COUNT}
 ctest --output-on-failure || true
 cmake --build . --config Release --target install
