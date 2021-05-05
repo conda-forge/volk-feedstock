@@ -7,8 +7,8 @@ if errorlevel 1 exit 1
 
 :: delete the mangled volk_modtool script and install it fresh from the source
 :: to the Scripts directory so it is found and installed correctly as noarch Python
-del "%LIBRARY_PREFIX%\bin\volk_modtool"
+del "%LIBRARY_PREFIX%\bin\volk_modtool.py"
 if errorlevel 1 exit 1
 
-copy "..\python\volk_modtool\volk_modtool" "%PREFIX%\Scripts\volk_modtool"
+copy "%SRC_DIR%\python\volk_modtool\volk_modtool" "%PREFIX%\Scripts\volk_modtool"
 if errorlevel 1 exit 1
