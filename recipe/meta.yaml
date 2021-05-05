@@ -58,9 +58,10 @@ test:
 
 about:
   home: https://github.com/gnuradio/volk
-  license: GPL-3.0-or-later
-  license_family: GPL
-  license_file: COPYING
+  license: GPL-3.0-or-later AND Apache-2.0
+  license_file:
+    - COPYING
+    - LICENSE_CPU_FEATURES
   summary: The Vector Optimized Library of Kernels
   description: |
     VOLK is the Vector-Optimized Library of Kernels. It is a free library,

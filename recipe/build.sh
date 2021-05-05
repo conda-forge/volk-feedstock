@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# copy the cpu_features license to the source root
+cp "cpu_features/LICENSE" "LICENSE_CPU_FEATURES"
+
 mkdir build
 cd build
 

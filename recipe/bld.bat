@@ -1,5 +1,8 @@
 setlocal EnableDelayedExpansion
 
+:: copy the cpu_features license to the source root
+copy "cpu_features\LICENSE" "LICENSE_CPU_FEATURES"
+
 :: Make a build folder and change to it
 mkdir build
 cd build
