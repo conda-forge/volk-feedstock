@@ -22,6 +22,8 @@ requirements:
     - pkg-config  # [not win]
     # set constraint to avoid a matrix for different python versions
     - python >=3.6
+  host:
+    - boost-cpp  # [osx]
 
 outputs:
   - name: libvolk
