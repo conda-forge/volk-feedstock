@@ -12,7 +12,7 @@ cmake -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
       -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE=Release ^
-      -DVOLK_PYTHON_DIR="%LIBRARY_PREFIX%\site-packages"
+      -DVOLK_PYTHON_DIR="%LIBRARY_PREFIX%\site-packages" ^
       -DENABLE_MODTOOL=ON ^
       -DENABLE_PROFILING=OFF ^
       -DENABLE_TESTING=ON ^
