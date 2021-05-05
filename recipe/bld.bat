@@ -9,14 +9,13 @@ cd build
 
 :: configure
 cmake -G "Ninja" ^
-      -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
-      -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
-      -DPYTHON_EXECUTABLE:PATH="%PYTHON%" ^
-      -DVOLK_PYTHON_DIR:PATH="%PREFIX%"\Lib\site-packages ^
-      -DCMAKE_BUILD_TYPE:STRING=Release ^
-      -DENABLE_ORC:BOOL=OFF ^
-      -DENABLE_PROFILING:BOOL=OFF ^
-      -DENABLE_TESTING:BOOL=ON ^
+      -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
+      -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
+      -DCMAKE_BUILD_TYPE=Release ^
+      -DVOLK_PYTHON_DIR="%LIBRARY_PREFIX%\site-packages"
+      -DENABLE_MODTOOL=ON ^
+      -DENABLE_PROFILING=OFF ^
+      -DENABLE_TESTING=ON ^
       ..
 if errorlevel 1 exit 1
 
@@ -27,7 +26,3 @@ if errorlevel 1 exit 1
 :: test
 ctest --output-on-failure
 ::if errorlevel 1 exit 1
-
-:: install
-cmake --build . --config Release --target install
-if errorlevel 1 exit 1
