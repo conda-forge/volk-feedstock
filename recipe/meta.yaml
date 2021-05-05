@@ -63,6 +63,8 @@ outputs:
       string: py_{{ build_num }}
       noarch: python
     requirements:
+      build:
+        - cmake
       run:
         - python
     test:
