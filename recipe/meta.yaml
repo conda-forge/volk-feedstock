@@ -37,8 +37,10 @@ outputs:
         - cmake
       host:
         - boost-cpp  # [osx]
+        - gstreamer-orc  # [linux64 or osx64]
       run:
         - boost-cpp  # [osx]
+        - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}
     test:
       commands:
         # verify CLI tools
