@@ -1,5 +1,4 @@
-azure:
-  store_build_artifacts: true
+azure: {store_build_artifacts: true}
+bot: {automerge: true}
 conda_forge_output_validation: true
-bot:
-  automerge: true
+provider: {linux_aarch64: azure, linux_ppc64le: default}
