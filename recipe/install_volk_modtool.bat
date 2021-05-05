@@ -2,7 +2,7 @@ setlocal EnableDelayedExpansion
 
 cd build
 
-cmake -P python\volk_modtool\cmake_install.cmake
+cmake -P python/volk_modtool/cmake_install.cmake
 if errorlevel 1 exit 1
 
 :: delete the mangled volk_modtool script and install it fresh from the source
