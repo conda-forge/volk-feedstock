@@ -3,7 +3,7 @@ About volk
 
 Home: https://github.com/gnuradio/volk
 
-Package license: GPL-3.0-or-later
+Package license: GPL-3.0-or-later AND Apache-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/volk-feedstock/blob/master/LICENSE.txt)
 
@@ -37,13 +37,6 @@ Current build status
     <td>
       <a href="https://travis-ci.com/conda-forge/volk-feedstock">
         <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/volk-feedstock/master.svg?label=macOS">
-      </a>
-    </td>
-  </tr><tr>
-    <td>Drone</td>
-    <td>
-      <a href="https://cloud.drone.io/conda-forge/volk-feedstock">
-        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/volk-feedstock/master.svg?label=Linux">
       </a>
     </td>
   </tr>
