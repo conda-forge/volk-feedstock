@@ -24,6 +24,7 @@ requirements:
     - python >=3.6
   host:
     - boost-cpp  # [osx]
+    - gstreamer-orc  # [x86_64 and (linux or osx)]
 
 outputs:
   - name: libvolk
@@ -39,10 +40,10 @@ outputs:
         - cmake
       host:
         - boost-cpp  # [osx]
-        - gstreamer-orc  # [linux64 or osx64]
+        - gstreamer-orc  # [x86_64 and (linux or osx)]
       run:
         - boost-cpp  # [osx]
-        - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}
+        - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}  # [x86_64 and (linux or osx)]
     test:
       commands:
         # verify CLI tools
