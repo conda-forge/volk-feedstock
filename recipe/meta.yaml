@@ -29,7 +29,7 @@ requirements:
     - gstreamer-orc  # [x86_64 and (linux or osx)]
 
 outputs:
-  - name: libvolk
+  - name: volk
     script: install_volk.bat  # [win]
     script: install_volk.sh  # [not win]
     build:
@@ -63,7 +63,7 @@ outputs:
         # run selection of commands
         - volk-config-info --version --prefix --cc --cflags --all-machines --avail-machines --machine --alignment --malloc
 
-  - name: volk_modtool
+  - name: volk-modtool
     script: install_volk_modtool.bat  # [win]
     script: install_volk_modtool.sh  # [not win]
     build:
@@ -82,14 +82,14 @@ outputs:
       imports:
         - volk_modtool
 
-  - name: volk
+  - name: volk-dev
     build:
       run_exports:
         - {{ pin_subpackage('volk', max_pin='x.x') }}
     requirements:
       run:
-        - {{ pin_subpackage('libvolk', exact=True) }}
-        - {{ pin_subpackage('volk_modtool', exact=True) }}
+        - {{ pin_subpackage('volk', exact=True) }}
+        - {{ pin_subpackage('volk-modtool', exact=True) }}
     test:
       commands:
         - volk-config-info --version --prefix --cc --cflags --all-machines --avail-machines --machine --alignment --malloc
