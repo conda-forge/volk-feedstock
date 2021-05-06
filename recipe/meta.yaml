@@ -26,7 +26,7 @@ requirements:
     # set constraint to avoid a matrix for different python versions
     - python >=3.6
   host:
-    - boost-cpp  # [osx]
+    - boost-cpp  # [osx and not arm64]
     - gstreamer-orc  # [x86_64 and (linux or osx)]
 
 outputs:
@@ -42,10 +42,10 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
       host:
-        - boost-cpp  # [osx]
+        - boost-cpp  # [osx and not arm64]
         - gstreamer-orc  # [x86_64 and (linux or osx)]
       run:
-        - boost-cpp  # [osx]
+        - boost-cpp  # [osx and not arm64]
         - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}  # [x86_64 and (linux or osx)]
     test:
       commands:
