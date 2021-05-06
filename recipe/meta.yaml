@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/gnuradio/volk/releases/download/v{{ version }}/volk-{{ version }}.tar.gz
   sha256: 61d681f90e0f30894f806ab050e9ba28260799c01f1ed0f58623942d8c7f4d48
+  patches:
+    - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
 
 build:
   number: {{ build_num }}
@@ -67,6 +69,8 @@ outputs:
     build:
       string: py_{{ build_num }}
       noarch: python
+      entry_points:
+        - volk_modtool = volk_modtool.__main__:main
     requirements:
       build:
         - cmake
