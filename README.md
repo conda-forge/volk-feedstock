@@ -88,6 +88,13 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
@@ -107,9 +114,9 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libvolk-green.svg)](https://anaconda.org/conda-forge/libvolk) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libvolk.svg)](https://anaconda.org/conda-forge/libvolk) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libvolk.svg)](https://anaconda.org/conda-forge/libvolk) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libvolk.svg)](https://anaconda.org/conda-forge/libvolk) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-volk-green.svg)](https://anaconda.org/conda-forge/volk) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/volk.svg)](https://anaconda.org/conda-forge/volk) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/volk.svg)](https://anaconda.org/conda-forge/volk) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/volk.svg)](https://anaconda.org/conda-forge/volk) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-volk_modtool-green.svg)](https://anaconda.org/conda-forge/volk_modtool) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/volk_modtool.svg)](https://anaconda.org/conda-forge/volk_modtool) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/volk_modtool.svg)](https://anaconda.org/conda-forge/volk_modtool) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/volk_modtool.svg)](https://anaconda.org/conda-forge/volk_modtool) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-volk--dev-green.svg)](https://anaconda.org/conda-forge/volk-dev) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/volk-dev.svg)](https://anaconda.org/conda-forge/volk-dev) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/volk-dev.svg)](https://anaconda.org/conda-forge/volk-dev) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/volk-dev.svg)](https://anaconda.org/conda-forge/volk-dev) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-volk--modtool-green.svg)](https://anaconda.org/conda-forge/volk-modtool) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/volk-modtool.svg)](https://anaconda.org/conda-forge/volk-modtool) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/volk-modtool.svg)](https://anaconda.org/conda-forge/volk-modtool) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/volk-modtool.svg)](https://anaconda.org/conda-forge/volk-modtool) |
 
 Installing volk
 ===============
@@ -121,16 +128,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libvolk, volk, volk_modtool` can be installed with:
+Once the `conda-forge` channel has been enabled, `volk, volk-dev, volk-modtool` can be installed with:
 
 ```
-conda install libvolk volk volk_modtool
+conda install volk volk-dev volk-modtool
 ```
 
-It is possible to list all of the versions of `libvolk` available on your platform with:
+It is possible to list all of the versions of `volk` available on your platform with:
 
 ```
-conda search libvolk --channel conda-forge
+conda search volk --channel conda-forge
 ```
 
 
