@@ -10,5 +10,5 @@ if errorlevel 1 exit 1
 del "%LIBRARY_PREFIX%\bin\volk_modtool.py"
 if errorlevel 1 exit 1
 
-copy "%SRC_DIR%\python\volk_modtool\volk_modtool" "%PREFIX%\Scripts\volk_modtool"
+xcopy "%SRC_DIR%\python\volk_modtool\volk_modtool" "%PREFIX%\Scripts\"
 if errorlevel 1 exit 1
