@@ -10,6 +10,7 @@ source:
   sha256: 61d681f90e0f30894f806ab050e9ba28260799c01f1ed0f58623942d8c7f4d48
   patches:
     - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
+    - 0002-Fix-CMAKE_SYSTEM_PROCESSOR-arm64-should-AARCH64-not-.patch
 
 build:
   number: {{ build_num }}
