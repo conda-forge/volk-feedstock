@@ -1,60 +1,101 @@
-{% set volk_lib = "volk" %}
-{% set name = "volk" %}
 {% set version = "2.4.1" %}
+{% set build_num = "2" %}
 
 package:
-  name: {{ name }}
+  name: volk-split
   version: {{ version }}
 
 source:
-  url: https://github.com/gnuradio/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/gnuradio/volk/releases/download/v{{ version }}/volk-{{ version }}.tar.gz
   sha256: 61d681f90e0f30894f806ab050e9ba28260799c01f1ed0f58623942d8c7f4d48
+  patches:
+    - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
 
 build:
-  number: 1
-  run_exports:
-    - {{ pin_subpackage('volk', max_pin='x.x') }}
-  skip: true  # [py2k]
+  number: {{ build_num }}
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake >=3.8
+    - mako >=0.4.2
     - ninja
     - pkg-config  # [not win]
-
+    # set constraint to avoid a matrix for different python versions
+    - python >=3.6
   host:
     - boost-cpp  # [osx]
-    - mako >=0.4.2
-    - python
+    - gstreamer-orc  # [x86_64 and (linux or osx)]
 
-  run:
-    - boost-cpp  # [osx]
-    - python
+outputs:
+  - name: volk
+    script: install_volk.bat  # [win]
+    script: install_volk.sh  # [not win]
+    build:
+      run_exports:
+        - {{ pin_subpackage('volk', max_pin='x.x') }}
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cmake
+      host:
+        - boost-cpp  # [osx]
+        - gstreamer-orc  # [x86_64 and (linux or osx)]
+      run:
+        - boost-cpp  # [osx]
+        - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}  # [x86_64 and (linux or osx)]
+    test:
+      commands:
+        # verify CLI tools
+        {% set volk_cmds = ["volk-config-info", "volk_profile"] %}
+        {% for cmd in volk_cmds %}
+        - command -v {{ cmd }}  # [unix]
+        - where {{ cmd }}  # [win]
+        {% endfor %}
 
-test:
-  commands:
-    # verify CLI tools
-    {% set volk_cmds = ["volk-config-info", "volk_profile"] %}
-    {% set volk_python_cmds = ["volk_modtool"] %}  # [unix]
-    {% set volk_python_cmds = ["volk_modtool.py"] %}  # [win]
-    {% for each_cmd in volk_cmds + volk_python_cmds %}
-    - command -v {{ each_cmd }}  # [unix]
-    - where {{ each_cmd }}  # [win]
-    {% endfor %}
+        # verify libraries
+        - test -f $PREFIX/lib/libvolk${SHLIB_EXT}  # [unix]
+        - if not exist %PREFIX%\\Library\\bin\\volk.dll exit 1  # [win]
+        - if not exist %PREFIX%\\Library\\lib\\volk.lib exit 1  # [win]
 
-    # verify libraries
-    {% set volk_lib = "volk" %}
-    - test -f $PREFIX/lib/lib{{ volk_lib }}${SHLIB_EXT}  # [unix]
-    - if not exist %PREFIX%\\Library\\bin\\{{ volk_lib }}.dll exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\lib\\{{ volk_lib }}.lib exit 1  # [win]
+        # run selection of commands
+        - volk-config-info --version --prefix --cc --cflags --all-machines --avail-machines --machine --alignment --malloc
 
-    # run selection of commands
-    - volk-config-info --version --prefix --cc --cflags --all-machines --avail-machines --machine --alignment --malloc
+  - name: volk-modtool
+    script: install_volk_modtool.bat  # [win]
+    script: install_volk_modtool.sh  # [not win]
+    build:
+      string: py_{{ build_num }}
+      noarch: python
+      entry_points:
+        - volk_modtool = volk_modtool.__main__:main
+    requirements:
+      build:
+        - cmake
+      run:
+        - python
+    test:
+      commands:
+        - volk_modtool
+      imports:
+        - volk_modtool
 
-  imports:
-    - volk_modtool
+  - name: volk-dev
+    build:
+      run_exports:
+        - {{ pin_subpackage('volk', max_pin='x.x') }}
+    requirements:
+      run:
+        - {{ pin_subpackage('volk', exact=True) }}
+        - {{ pin_subpackage('volk-modtool', exact=True) }}
+    test:
+      commands:
+        - volk-config-info --version --prefix --cc --cflags --all-machines --avail-machines --machine --alignment --malloc
+        - volk_modtool
+      imports:
+        - volk_modtool
 
 about:
   home: https://github.com/gnuradio/volk
@@ -82,5 +123,6 @@ about:
   dev_url: https://github.com/gnuradio/volk
 
 extra:
+  feedstock-name: volk
   recipe-maintainers:
     - ryanvolz

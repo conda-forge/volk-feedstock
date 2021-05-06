@@ -39,6 +39,13 @@ Current build status
         <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/volk-feedstock/master.svg?label=macOS">
       </a>
     </td>
+  </tr><tr>
+    <td>Drone</td>
+    <td>
+      <a href="https://cloud.drone.io/conda-forge/volk-feedstock">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/volk-feedstock/master.svg?label=Linux">
+      </a>
+    </td>
   </tr>
     
   <tr>
@@ -53,199 +60,38 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.6.____73_pypy</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.6.____73_pypy" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.6.____cpython</td>
+              <td>linux_aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.7.____73_pypy</td>
+              <td>linux_ppc64le</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.7.____73_pypy" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.7.____cpython</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.8.____cpython</td>
+              <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.6.____73_pypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.6.____73_pypy" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.6.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.7.____73_pypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.7.____73_pypy" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.7.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.6.____73_pypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.6.____73_pypy" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.6.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.7.____73_pypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.7.____73_pypy" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.7.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.6.____73_pypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____73_pypy" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.7.____73_pypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____73_pypy" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.7.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=win&configuration=win_64_python3.6.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.7.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=win&configuration=win_64_python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=win&configuration=win_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8367&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=win&configuration=win_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/volk-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -261,7 +107,9 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libvolk-green.svg)](https://anaconda.org/conda-forge/libvolk) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libvolk.svg)](https://anaconda.org/conda-forge/libvolk) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libvolk.svg)](https://anaconda.org/conda-forge/libvolk) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libvolk.svg)](https://anaconda.org/conda-forge/libvolk) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-volk-green.svg)](https://anaconda.org/conda-forge/volk) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/volk.svg)](https://anaconda.org/conda-forge/volk) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/volk.svg)](https://anaconda.org/conda-forge/volk) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/volk.svg)](https://anaconda.org/conda-forge/volk) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-volk_modtool-green.svg)](https://anaconda.org/conda-forge/volk_modtool) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/volk_modtool.svg)](https://anaconda.org/conda-forge/volk_modtool) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/volk_modtool.svg)](https://anaconda.org/conda-forge/volk_modtool) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/volk_modtool.svg)](https://anaconda.org/conda-forge/volk_modtool) |
 
 Installing volk
 ===============
@@ -273,16 +121,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `volk` can be installed with:
+Once the `conda-forge` channel has been enabled, `libvolk, volk, volk_modtool` can be installed with:
 
 ```
-conda install volk
+conda install libvolk volk volk_modtool
 ```
 
-It is possible to list all of the versions of `volk` available on your platform with:
+It is possible to list all of the versions of `libvolk` available on your platform with:
 
 ```
-conda search volk --channel conda-forge
+conda search libvolk --channel conda-forge
 ```
 
 
