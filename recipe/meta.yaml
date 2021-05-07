@@ -24,7 +24,7 @@ requirements:
     - gstreamer-orc
     - mako >=0.4.2
     - ninja
-    - pkg-config  # [not win]
+    - pkg-config
     # set constraint to avoid a matrix for different python versions
     - python >=3.6
   host:
