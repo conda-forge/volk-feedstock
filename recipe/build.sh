@@ -12,10 +12,13 @@ cmake_config_args=(
     -DCMAKE_INSTALL_PREFIX=$PREFIX
     -DCMAKE_PREFIX_PATH=$PREFIX
     -DVOLK_PYTHON_DIR="$PREFIX/site-packages"
+    -DORCC_EXECUTABLE="$BUILD_PREFIX/bin/orcc"
     -DENABLE_MODTOOL=ON
     -DENABLE_PROFILING=OFF
     -DENABLE_TESTING=ON
 )
-cmake -G "Ninja" .. "${cmake_config_args[@]}"
+cmake ${CMAKE_ARGS} -G "Ninja" .. "${cmake_config_args[@]}"
 cmake --build . --config Release -- -j${CPU_COUNT}
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 ctest --output-on-failure || true
+fi

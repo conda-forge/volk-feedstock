@@ -13,6 +13,7 @@ cmake -G "Ninja" ^
       -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE=Release ^
       -DVOLK_PYTHON_DIR="%LIBRARY_PREFIX%\site-packages" ^
+      -DORCC_EXECUTABLE="%BUILD_PREFIX%\Library\bin\orcc.exe" ^
       -DENABLE_MODTOOL=ON ^
       -DENABLE_PROFILING=OFF ^
       -DENABLE_TESTING=ON ^

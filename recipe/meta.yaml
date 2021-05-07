@@ -1,5 +1,5 @@
 {% set version = "2.4.1" %}
-{% set build_num = "2" %}
+{% set build_num = "3" %}
 
 package:
   name: volk-split
@@ -10,6 +10,8 @@ source:
   sha256: 61d681f90e0f30894f806ab050e9ba28260799c01f1ed0f58623942d8c7f4d48
   patches:
     - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
+    - 0002-Fix-CMAKE_SYSTEM_PROCESSOR-arm64-should-AARCH64-not-.patch
+    - 0003-Add-support-for-Apple-M1-AArch64-processor.patch
 
 build:
   number: {{ build_num }}
@@ -19,14 +21,15 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake >=3.8
+    - gstreamer-orc  # [not win]
     - mako >=0.4.2
     - ninja
-    - pkg-config  # [not win]
+    - pkg-config
     # set constraint to avoid a matrix for different python versions
     - python >=3.6
   host:
-    - boost-cpp  # [osx]
-    - gstreamer-orc  # [x86_64 and (linux or osx)]
+    - boost-cpp  # [osx and not arm64]
+    - gstreamer-orc  # [not win]
 
 outputs:
   - name: volk
@@ -41,11 +44,11 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
       host:
-        - boost-cpp  # [osx]
-        - gstreamer-orc  # [x86_64 and (linux or osx)]
+        - boost-cpp  # [osx and not arm64]
+        - gstreamer-orc  # [not win]
       run:
-        - boost-cpp  # [osx]
-        - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}  # [x86_64 and (linux or osx)]
+        - boost-cpp  # [osx and not arm64]
+        - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}  # [not win]
     test:
       commands:
         # verify CLI tools
@@ -61,6 +64,7 @@ outputs:
         - if not exist %PREFIX%\\Library\\lib\\volk.lib exit 1  # [win]
 
         # run selection of commands
+        - list_cpu_features_volk
         - volk-config-info --version --prefix --cc --cflags --all-machines --avail-machines --machine --alignment --malloc
 
   - name: volk-modtool
