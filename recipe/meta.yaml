@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake >=3.8
-    - gstreamer-orc
+    - gstreamer-orc  # [not win]
     - mako >=0.4.2
     - ninja
     - pkg-config
@@ -29,7 +29,7 @@ requirements:
     - python >=3.6
   host:
     - boost-cpp  # [osx and not arm64]
-    - gstreamer-orc
+    - gstreamer-orc  # [not win]
 
 outputs:
   - name: volk
@@ -45,10 +45,10 @@ outputs:
         - cmake
       host:
         - boost-cpp  # [osx and not arm64]
-        - gstreamer-orc
+        - gstreamer-orc  # [not win]
       run:
         - boost-cpp  # [osx and not arm64]
-        - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}
+        - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}  # [not win]
     test:
       commands:
         # verify CLI tools
