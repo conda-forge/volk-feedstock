@@ -1,5 +1,5 @@
 {% set version = "2.5.0" %}
-{% set build_num = "3" %}
+{% set build_number = "0" %}
 
 package:
   name: volk-split
@@ -14,7 +14,7 @@ source:
     - 0003-Add-support-for-Apple-M1-AArch64-processor.patch
 
 build:
-  number: {{ build_num }}
+  number: {{ build_number }}
 
 requirements:
   build:
@@ -71,7 +71,7 @@ outputs:
     script: install_volk_modtool.bat  # [win]
     script: install_volk_modtool.sh  # [not win]
     build:
-      string: py_{{ build_num }}
+      string: py_{{ build_number }}
       noarch: python
       entry_points:
         - volk_modtool = volk_modtool.__main__:main
