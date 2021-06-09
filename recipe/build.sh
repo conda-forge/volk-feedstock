@@ -22,3 +22,4 @@ cmake --build . --config Release -- -j${CPU_COUNT}
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 ctest --output-on-failure || true
 fi
+exit 1
