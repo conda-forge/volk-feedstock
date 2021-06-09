@@ -11,8 +11,8 @@ jobs:
       linux_64_:
         CONFIG: linux_64_
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
         SHORT_CONFIG: linux_64_
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360
 
   steps:
@@ -45,9 +45,9 @@ jobs:
         if [[ ${#ARTIFACT_UNIQUE_ID} -gt 80 ]]; then
           ARTIFACT_UNIQUE_ID="$(build.BuildNumber).$(system.JobAttempt)_$(SHORT_CONFIG)"
         fi
-        # prefix should be <= 20 characters so the artifact name doesn't exceed 100
-        BLD_ARTIFACT_PREFIX="conda_artifacts_"
-        BLD_ARTIFACT_NAME="${BLD_ARTIFACT_PREFIX}${ARTIFACT_UNIQUE_ID}"
+        # prefix should be < 20 characters so the artifact name doesn't exceed 100
+        BLD_ARTIFACT_PREFIX="conda_artifacts"
+        BLD_ARTIFACT_NAME="${BLD_ARTIFACT_PREFIX}_${ARTIFACT_UNIQUE_ID}"
         echo "##vso[task.setVariable variable=BLD_ARTIFACT_NAME]$BLD_ARTIFACT_NAME"
         echo "BLD_ARTIFACT_NAME: $BLD_ARTIFACT_NAME"
 
@@ -76,8 +76,8 @@ jobs:
           echo "BLD_ARTIFACT_ZIP: $BLD_ARTIFACT_ZIP"
 
           # Create a zip archive to use as the conda env artifact
-          ENV_ARTIFACT_PREFIX="conda_envs_"
-          ENV_ARTIFACT_NAME="${ENV_ARTIFACT_PREFIX}${ARTIFACT_UNIQUE_ID}"
+          ENV_ARTIFACT_PREFIX="conda_envs"
+          ENV_ARTIFACT_NAME="${ENV_ARTIFACT_PREFIX}_${ARTIFACT_UNIQUE_ID}"
           echo "##vso[task.setVariable variable=ENV_ARTIFACT_NAME]$ENV_ARTIFACT_NAME"
           echo "ENV_ARTIFACT_NAME: $ENV_ARTIFACT_NAME"
           ENV_ARTIFACT_ZIP="$(Build.ArtifactStagingDirectory)/${ENV_ARTIFACT_NAME}.zip"
