@@ -118,7 +118,7 @@ jobs:
 
         if "%AGENT_JOBSTATUS%" == "Failed" (
           set BLD_ARTIFACT_ZIP=$(Build.ArtifactStagingDirectory)\%BLD_ARTIFACT_NAME%.zip
-          7z a "!BLD_ARTIFACT_ZIP!" "%BLD_ARTIFACT_DIR%" -xr!.git/ -xr!_*_env*/ -xr!*_cache/
+          7z a "!BLD_ARTIFACT_ZIP!" "%BLD_ARTIFACT_DIR%" -xr^^!.git/ -xr^^!_*_env*/ -xr^^!*_cache/
           echo ##vso[task.setVariable variable=BLD_ARTIFACT_PATH]!BLD_ARTIFACT_ZIP!
           echo BLD_ARTIFACT_ZIP: !BLD_ARTIFACT_ZIP!
 
@@ -127,7 +127,7 @@ jobs:
           echo ##vso[task.setVariable variable=ENV_ARTIFACT_NAME]!ENV_ARTIFACT_NAME!
           echo ENV_ARTIFACT_NAME: !ENV_ARTIFACT_NAME!
           set ENV_ARTIFACT_ZIP=$(Build.ArtifactStagingDirectory)\!ENV_ARTIFACT_NAME!.zip
-          7z a "!ENV_ARTIFACT_ZIP!" "%BLD_ARTIFACT_DIR%" -ir!_*_env*/
+          7z a "!ENV_ARTIFACT_ZIP!" "%BLD_ARTIFACT_DIR%" -ir^^!_*_env*/
           echo ##vso[task.setVariable variable=ENV_ARTIFACT_PATH]!ENV_ARTIFACT_ZIP!
           echo ENV_ARTIFACT_ZIP: !ENV_ARTIFACT_ZIP!
         )
