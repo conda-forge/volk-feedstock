@@ -78,6 +78,8 @@ jobs:
           # Create a zip archive to use as the conda env artifact
           ENV_ARTIFACT_PREFIX="conda_envs_"
           ENV_ARTIFACT_NAME="${ENV_ARTIFACT_PREFIX}${ARTIFACT_UNIQUE_ID}"
+          echo "##vso[task.setVariable variable=ENV_ARTIFACT_NAME]$ENV_ARTIFACT_NAME"
+          echo "ENV_ARTIFACT_NAME: $ENV_ARTIFACT_NAME"
           ENV_ARTIFACT_ZIP="$(Build.ArtifactStagingDirectory)/${ENV_ARTIFACT_NAME}.zip"
           zip -r -y -q "$ENV_ARTIFACT_ZIP" . -i '*_*_env*/*'
           echo "##vso[task.setVariable variable=ENV_ARTIFACT_PATH]$ENV_ARTIFACT_ZIP"
