@@ -1,4 +1,8 @@
-azure: {store_build_artifacts: true}
+azure:
+  settings_win:
+    pool:
+      vmImage: windows-2019
+  store_build_artifacts: true
 bot: {automerge: true}
 build_platform: {osx_arm64: osx_64}
 conda_forge_output_validation: true
