@@ -25,5 +25,5 @@ cmake --build . --config Release -- -j%CPU_COUNT%
 if errorlevel 1 exit 1
 
 :: test
-ctest --output-on-failure
-::if errorlevel 1 exit 1
+ctest --build-config Release --output-on-failure --timeout 120 -j%CPU_COUNT%
+if errorlevel 1 exit 1

@@ -19,6 +19,22 @@ cmake_config_args=(
 )
 cmake ${CMAKE_ARGS} -G "Ninja" .. "${cmake_config_args[@]}"
 cmake --build . --config Release -- -j${CPU_COUNT}
+
+if [[ $target_platform == linux-ppc64le ]] ; then
+    SKIP_TESTS=(
+        qa_volk_32fc_s32fc_multiply_32fc
+        qa_volk_32fc_s32fc_rotatorpuppet_32fc
+        qa_volk_32fc_x2_s32fc_multiply_conjugate_add_32fc
+    )
+fi
+SKIP_TESTS_STR=$( IFS="|"; echo "${SKIP_TESTS[*]}" )
+
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-ctest --output-on-failure || true
+    if [ -z "$SKIP_TESTS_STR" ]; then
+        ctest --build-config Release --output-on-failure --timeout 120 -j${CPU_COUNT}
+    else
+        ctest --build-config Release --output-on-failure --timeout 120 -j${CPU_COUNT} -E $SKIP_TESTS_STR
+        # now run the skipped tests to see the failures, but don't error out
+        ctest --build-config Release --output-on-failure --timeout 120 -j${CPU_COUNT} -R $SKIP_TESTS_STR || true
+    fi
 fi
