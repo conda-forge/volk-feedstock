@@ -1,5 +1,5 @@
 {% set version = "2.5.0" %}
-{% set build_number = "0" %}
+{% set build_number = "1" %}
 
 package:
   name: volk-split
@@ -66,6 +66,7 @@ outputs:
         # run selection of commands
         - list_cpu_features_volk
         - volk-config-info --version --prefix --cc --cflags --all-machines --avail-machines --machine --alignment --malloc
+        - volk_profile -n -b
 
   - name: volk-modtool
     script: install_volk_modtool.bat  # [win]
