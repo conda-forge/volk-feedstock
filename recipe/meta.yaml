@@ -1,4 +1,4 @@
-{% set version = "2.5.1" %}
+{% set version = "2.5.2" %}
 {% set build_number = 0 %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/gnuradio/volk/releases/download/v{{ version }}/volk-{{ version }}.tar.gz
-  sha256: 8f7f2f8918c6ba63ebe8375fe87add347046b8b3acbba2fb582577bebd8852df
+  sha256: ead6d39d390a03cec0d65d474b5222654103b304f7f00c730d69ea54a2ca7006
   patches:
     - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
     - 0001-Add-support-for-Apple-M1-AArch64-SoCs.patch
