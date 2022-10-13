@@ -3,6 +3,10 @@
 # copy the cpu_features license to the source root
 cp "cpu_features/LICENSE" "LICENSE_CPU_FEATURES"
 
+if [[ $target_platform == osx* ]] ; then
+    CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+fi
+
 mkdir build
 cd build
 
