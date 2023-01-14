@@ -1,5 +1,5 @@
-{% set version = "2.5.2" %}
-{% set build_number = 1 %}
+{% set version = "3.0.0" %}
+{% set build_number = 0 %}
 
 package:
   name: volk-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/gnuradio/volk/releases/download/v{{ version }}/volk-{{ version }}.tar.gz
-  sha256: ead6d39d390a03cec0d65d474b5222654103b304f7f00c730d69ea54a2ca7006
+  sha256: 797c208bd449f77186684c9fa368cc8577fb98ce3763db5de526e6809de32d28
   patches:
     - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
     - 0001-Add-support-for-Apple-M1-AArch64-SoCs.patch
