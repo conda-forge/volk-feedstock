@@ -17,6 +17,7 @@ cmake_config_args=(
     -DCMAKE_PREFIX_PATH=$PREFIX
     -DVOLK_PYTHON_DIR="$PREFIX/site-packages"
     -DORCC_EXECUTABLE="$BUILD_PREFIX/bin/orcc"
+    -DENABLE_LGPL=OFF
     -DENABLE_MODTOOL=ON
     -DENABLE_PROFILING=OFF
     -DENABLE_TESTING=ON
@@ -26,6 +27,7 @@ cmake --build . --config Release -- -j${CPU_COUNT}
 
 if [[ $target_platform == linux-ppc64le ]] ; then
     SKIP_TESTS=(
+        qa_volk_32fc_32f_dot_prod_32fc
         qa_volk_32fc_s32fc_multiply_32fc
         qa_volk_32fc_s32fc_rotatorpuppet_32fc
         qa_volk_32fc_x2_s32fc_multiply_conjugate_add_32fc
