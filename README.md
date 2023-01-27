@@ -3,7 +3,7 @@ About volk
 
 Home: https://github.com/gnuradio/volk
 
-Package license: GPL-3.0-or-later AND Apache-2.0
+Package license: LGPL-3.0-or-later AND Apache-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/volk-feedstock/blob/main/LICENSE.txt)
 
