@@ -8,10 +8,10 @@ Subject: [PATCH] Add main() to volk_modtool script, usable as an entry point.
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/python/volk_modtool/volk_modtool b/python/volk_modtool/volk_modtool
-index 4f6f247..892d4a5 100755
+index 15f9f77..38f3022 100755
 --- a/python/volk_modtool/volk_modtool
 +++ b/python/volk_modtool/volk_modtool
-@@ -27,7 +27,7 @@ from optparse import OptionParser, OptionGroup
+@@ -15,7 +15,7 @@ from optparse import OptionParser, OptionGroup
  import os
  import sys
  
@@ -20,7 +20,7 @@ index 4f6f247..892d4a5 100755
      parser = OptionParser();
      actions = OptionGroup(parser, 'Actions');
      actions.add_option('-i', '--install', action='store_true',
-@@ -126,3 +126,6 @@ if __name__ == '__main__':
+@@ -114,3 +114,6 @@ if __name__ == '__main__':
              kernelset = my_modtool.get_current_kernels(base);
              for i in kernelset:
                  print(i);
@@ -28,5 +28,5 @@ index 4f6f247..892d4a5 100755
 +if __name__ == '__main__':
 +    main()
 -- 
-2.34.1
+2.42.0
 

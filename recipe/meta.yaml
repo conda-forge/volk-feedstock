@@ -10,7 +10,6 @@ source:
   sha256: 4f5bb84f535ce86cfadc953379587bdd5a1a171d684b0a6f35adcaf2ac46fd01
   patches:
     - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
-    - 0001-Add-support-for-Apple-M1-AArch64-SoCs.patch
 
 build:
   number: {{ build_number }}
