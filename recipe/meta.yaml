@@ -59,7 +59,6 @@ outputs:
         - if not exist %PREFIX%\\Library\\lib\\volk.lib exit 1  # [win]
 
         # run selection of commands
-        - list_cpu_features_volk
         - volk-config-info --version --prefix --cc --cflags --all-machines --avail-machines --machine --alignment --malloc
 
   - name: volk-modtool
