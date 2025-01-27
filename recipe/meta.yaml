@@ -1,5 +1,5 @@
 {% set version = "3.1.2" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: volk-split
@@ -18,13 +18,14 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - cmake >=3.8
     - gstreamer-orc  # [not win]
     - mako >=0.4.2
     - ninja
     - pkg-config
     # set constraint to avoid a matrix for different python versions
-    - python >=3.6
+    - python {{ python_min }}
   host:
     - gstreamer-orc  # [not win]
 
@@ -39,6 +40,7 @@ outputs:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - {{ stdlib('c') }}
         - cmake
       host:
         - gstreamer-orc  # [not win]
@@ -47,11 +49,10 @@ outputs:
     test:
       commands:
         # verify CLI tools
-        {% set volk_cmds = ["volk-config-info", "volk_profile"] %}
-        {% for cmd in volk_cmds %}
-        - command -v {{ cmd }}  # [unix]
-        - where {{ cmd }}  # [win]
-        {% endfor %}
+        - command -v volk-config-info  # [unix]
+        - command -v volk_profile  # [unix]
+        - where volk-config-info  # [win]
+        - where volk_profile  # [win]
 
         # verify libraries
         - test -f $PREFIX/lib/libvolk${SHLIB_EXT}  # [unix]
@@ -72,9 +73,13 @@ outputs:
     requirements:
       build:
         - cmake
+      host:
+        - python {{ python_min }}
       run:
-        - python
+        - python >={{ python_min }}
     test:
+      requires:
+        - python {{ python_min }}
       commands:
         - volk_modtool
       imports:
