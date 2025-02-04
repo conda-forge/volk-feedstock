@@ -1,5 +1,5 @@
-{% set version = "3.1.2" %}
-{% set build_number = 1 %}
+{% set version = "3.2.0" %}
+{% set build_number = 0 %}
 
 package:
   name: volk-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/gnuradio/volk/releases/download/v{{ version }}/volk-{{ version }}.tar.gz
-  sha256: eded90e8a3958ee39376f17c1f9f8d4d6ad73d960b3dd98cee3f7ff9db529205
+  sha256: 9c6c11ec8e08aa37ce8ef7c5bcbdee60bac2428faeffb07d072e572ed05eb8cd
   patches:
     - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
 
