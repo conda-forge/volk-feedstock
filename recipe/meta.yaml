@@ -1,4 +1,4 @@
-{% set version = "3.2.0" %}
+{% set version = "3.3.0" %}
 {% set build_number = 0 %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/gnuradio/volk/releases/download/v{{ version }}/volk-{{ version }}.tar.gz
-  sha256: 9c6c11ec8e08aa37ce8ef7c5bcbdee60bac2428faeffb07d072e572ed05eb8cd
+  sha256: 89d11c8c8d4213b1b780354cfdbda1fed0c0b65c82847e710638eb3e21418628
   patches:
     - 0001-Add-main-to-volk_modtool-script-usable-as-an-entry-p.patch
 
