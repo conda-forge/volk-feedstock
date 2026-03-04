@@ -27,6 +27,7 @@ requirements:
     # set constraint to avoid a matrix for different python versions
     - python {{ python_min }}
   host:
+    - fmt
     - gstreamer-orc  # [not win]
 
 outputs:
@@ -43,6 +44,7 @@ outputs:
         - {{ stdlib('c') }}
         - cmake
       host:
+        - fmt
         - gstreamer-orc  # [not win]
       run:
         - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}  # [not win]
