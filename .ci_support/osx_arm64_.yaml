@@ -18,6 +18,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '19'
+fmt:
+- '12.0'
 gstreamer:
 - '1.26'
 macos_machine:
